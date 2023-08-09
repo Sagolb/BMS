@@ -1,0 +1,26 @@
+<%- include('header') -%>
+
+<br><br><br><br><br>
+
+        <div class="box">
+          <div class="form"></div>
+        <form action="/register" method="POST">
+          <h2>User Register</h2>
+          <% if(locals.error) {%>
+            <p class="text-danger"><%=error%></p>
+            <%}%> 
+          <input type="text" name="Name" class="input-field1" placeholder="Name" required />
+            <input type="email" name="Email" class="input-field1" placeholder="Email" required />
+            <input type="password" name="Password"  class="input-field1"placeholder="Password" required/>
+            <input type="text" name="Phone"  class="input-field1"placeholder="Phone" required />
+            <div class="btn-container">
+            <input type="submit" class="btn" value="Register">
+            </div>
+            <p>Already Registered?<br><a href="/">Login</a></p>
+              <br>
+        </form>
+      </div>
+    </div>
+
+
+<%- include('footer') -%>

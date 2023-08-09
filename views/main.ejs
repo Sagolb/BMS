@@ -1,0 +1,145 @@
+<%- include('header') -%>
+<%if(locals.username){%>
+<h4>   
+        Hi <%=username%>, you are welcome here
+</h4>
+    <br>
+  
+<div class="box">
+<div class="form">
+    <form action="/main" method="POST">
+        <br>
+    <h2>Book your court</h2>
+    <input type="hidden" name="id" value="">
+
+    <label for="date">Date:</label>
+    <input type="date" name="Date" id="date" class="input-field1" placeholder="Date" required>
+
+    <label for="Timming">Timming:</label>
+    <select id="Timming" name="Timming">
+        <option value="6am-7am">6am-7am</option>
+        <option value="7am-8am">7am-8am</option>
+        <option value="8am-9am">8am-9am</option>
+        <option value="9am-10am">9am-10am</option>
+        <option value="10am-11am">10am-11am</option>
+        <option value="11am-12pm">11pm-12pm</option>
+        <option value="12pm-1pm">12pm-1pm</option>
+        <option value="1pm-2pm">1pm-2pm</option>
+        <option value="2pm-3pm">2pm-3pm</option>
+        <option value="3pm-4pm">3pm-4pm</option>
+        <option value="4pm-5pm">4pm-5pm</option>
+        <option value="5pm-6pm">5pm-6pm</option>
+        <option value="6pm-7pm">6pm-7pm</option>
+        <option value="7pm-8pm">7pm-8pm</option>
+      </select><br>
+
+
+    <label for="status">Court Location:</label>
+    <input type="text" name="status" id="status" class="input-field1" placeholder="Court " required>
+
+    <input type="hidden" name="UserID" value="{{cookie.UserID}}">
+
+    <div class="btn-container">
+        <button type="submit" class="btn">Book</button>
+    </div>
+    </form>
+</div>
+</div>
+   <br><br><br>
+   <% if(locals.error) {%>
+    <p class="text-danger"><%=error%></p>
+    <%}%>
+    <br><br>
+   
+    <table>
+
+        <tr>
+            <th>Date</th>  
+            <th>Timming</th>
+            <th>court_location</th>
+            <th>Booked By</th>
+            <th>UserID</th>
+            <th>Payment</th>
+        </tr>
+         <% if(timetable.length > 0){ %>
+            <% for(var i=0; i<timetable.length; i++){ %>
+                <tr>
+                    <td><%= timetable[i].Date %></td>
+         
+                    <td><%= timetable[i].Timming %></td>
+                    <td><%= timetable[i].Status %></td>
+        
+                 <td><%= timetable[i].username %></td>
+                <td><%=timetable[i].UserID %></td>
+                    <td><%=timetable[i].Payment %></td>
+                </tr>
+            <% } %>
+
+        <% }else{ %>
+            <tr>
+                <td colspan="6"><h1>No records found.</h1></td>
+              </tr>
+
+        <% } %>
+    </table>    
+    <%} else { %>
+        <p>You are not Logged in </p>
+     <% } %>
+    <script>
+      $('.toggle').click(function () {
+        "use strict";
+        $('nav ul').slideToggle();
+    });
+    
+    $(window).resize(function () {
+        "use strict";
+        if ($(window).width() > 780) {
+            $('nav ul').removeAttr('style');
+        }
+    });
+    </script>
+
+        <!-- <div>
+        <input type="radio" name="Timming" value="6am-7am" id="6am-7am">
+        <label for="6am-7am">6am-7am</label>
+
+        <input type="radio" name="Timming" value="7am-8am">
+        <label for="7am-8am">7am-8am</label>
+
+        <input type="radio"name="Timming" value="8am-9am">
+        <label for="8am-9am">8am-9am</label>
+
+        <input type="radio"name="Timming" value="9am-10am">
+        <label for="9am-10am">9am-10am</label>
+
+        <input type="radio"name="Timming" value="10am-11am">
+        <label for="10am-11am">10am-11am</label>
+
+        <input type="radio"name="Timming" value="11am-12pm">
+        <label for="11am-12pm">11am-12pm</label>
+
+        <input type="radio"name="Timming" value="12pm-1pm">
+        <label for="12pm-1pm">12pm-1pm</label>
+
+        <input type="radio"name="Timming" value="1pm-2pm">
+        <label for="1pm-2pm">1pm-2pm</label>
+
+        <input type="radio"name="Timming" value="2pm-3pm">
+        <label for="2pm-3pm">2pm-3pm</label>
+
+        <input type="radio"name="Timming" value="3pm-4pm">
+        <label for="3pm-4pm">3pm-4pm</label>
+
+        <input type="radio" name="Timming" value="4pm-5pm">
+        <label for="4pm-5pm">4pm-5pm</label>
+        <input type="radio" name="Timming" value="5pm-6pm">
+        <label for="5pm-6pm">5pm-6pm</label>
+
+        <input type="radio" name="Timming" value="6pm-7pm">
+        <label for="6pm-7pm">6pm-7pm</label>
+
+        <input type="radio" name="Timming" value="7pm-8pm">
+        <label for="7pm-8pm">7pm-8pm</label><br>
+    </div> -->
+
+    <%- include('footer') -%>

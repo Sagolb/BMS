@@ -1,0 +1,21 @@
+<%- include('header') -%>
+    <h1> About Us</h1>
+    <p>This is about us</p>
+    
+    
+    <script>
+      $('.toggle').click(function () {
+        "use strict";
+        $('nav ul').slideToggle();
+    });
+    
+    
+    
+    $(window).resize(function () {
+        "use strict";
+        if ($(window).width() > 780) {
+            $('nav ul').removeAttr('style');
+        }
+    });
+    </script>
+    <%- include('footer') -%>

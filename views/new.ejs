@@ -1,0 +1,53 @@
+<%- include('header') %>
+<br>
+<div class = "form">
+    <form action="/new" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="">
+        <label for="start_time">start_time</label>
+        <select id="start_time" name="start_time" size="12" multiple>
+            <option value="6am">6am</option>
+            <option value="7am">7am</option>
+            <option value="8am">8am</option>
+            <option value="9am">9am</option>
+            <option value="10am">10am</option>
+            <option value="11am">11pm</option>
+            <option value="12pm">12pm</option>
+            <option value="1pm">1pm</option>
+            <option value="2pm">2pm</option>
+            <option value="3pm">3pm</option>
+            <option value="4pm">4pm</option>
+            <option value="5pm">5pm</option>
+            <option value="6pm">6pm</option>
+            <option value="7pm">7pm</option>
+          </select><br>
+        <label for="end_time">end_time</label>
+        <select id="end_time" name="end_time" size="11" multiple>
+            <option value="7am">7am</option>
+            <option value="8am">8am</option>
+            <option value="9am">9am</option>
+            <option value="10am">10am</option>
+            <option value="11am">11pm</option>
+            <option value="12pm">12pm</option>
+            <option value="1pm">1pm</option>
+            <option value="2pm">2pm</option>
+            <option value="3pm">3pm</option>
+            <option value="4pm">4pm</option>
+            <option value="5pm">5pm</option>
+            <option value="6pm">6pm</option>
+            <option value="7pm">7pm</option>
+            <option value="8pm">8pm</option>
+          </select><br>
+        <input type="radio" id="value3" name="value3" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="value3" name="value3" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="value3" name="value3" value="HTML">
+        <label for="javascript">JavaScript</label>
+        <!-- <label>Store Image</label><br><br>
+    <p><%=(typeof alertMsg!='undefined')? alertMsg:''%></p>
+        <input type="file"  name="value3" multiple><br> -->
+
+        <button type="submit" class="btn">Book</button>
+    </form>
+</div>
+

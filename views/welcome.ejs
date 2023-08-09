@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+   
+    <style>
+        html, body {
+        min-height: 100%;
+        }
+        body, div, form, input, select, textarea, p { 
+        padding: 0;
+        margin: 0;
+        outline: none;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 14px;
+        color: #666;
+        line-height: 22px;
+        }
+        h1 {
+        position: absolute;
+        margin: 0;
+        font-size: 32px;
+        color: #fff;
+        z-index: 2;
+        }
+        .testbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+        padding: 20px;
+        }
+        form {
+        width: 100%;
+        padding: 20px;
+        border-radius: 6px;
+        background: #000000;
+        box-shadow: 0 0 20px 0 #a82877; 
+        }
+        .banner {
+        position: relative;
+        height: 210px;
+        background-image: url("/assets/bbb.jpg");      
+        background-size: cover;
+        background-position: right center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 0 20px 0 #a82877; 
+        }
+        .banner::after {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.5); 
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        }
+        input, textarea, select {
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        }
+        input {
+        width: calc(100% - 10px);
+        padding: 5px;
+        }
+        select {
+        width: 100%;
+        padding: 7px 0;
+        background: transparent;
+        }
+        textarea {
+        width: calc(100% - 12px);
+        padding: 5px;
+        }
+        .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+        color: #a82877;
+        }
+        .item input:hover, .item select:hover, .item textarea:hover {
+        border: 1px solid transparent;
+        box-shadow: 0 0 6px 0 #a82877;
+        color: #a82877;
+        }
+        .item {
+        position: relative;
+        margin: 10px 0;
+        }
+
+  
+
+        .btn-block {
+        margin-top: 10px;
+        text-align: center;
+        }
+        button {
+        width: 150px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px; 
+        background: #a82877;
+        font-size: 16px;
+        color: #fff;
+        cursor: pointer;
+        }
+        button:hover {
+        background: #bf1e81;
+        }
+
+      </style>
+    </head>
+    <body>
+
+      <div class="testbox">
+        <form action="/">
+          <div class="banner">
+            <h1>Entertainment Booking Form</h1>
+          </div>
+          <div class="item">
+            <p>Date of Event</p>
+            <input type="date" name="bdate" />
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            <p>Venue Name</p>
+            <input type="text" name="name"/>
+          </div>
+          <div class="item">
+            <p>Venue Address</p>
+            <input type="text" name="name" placeholder="Street address" />
+            <div class="city-item">
+            </div>
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+            <p>Start_time</p>
+            <input type="time" name="name"/>
+          </div>
+          <div class="item">
+            <p>End_time</p>
+            <input type="time" name="name"/>
+          </div>
+          <div class="item">
+            <p>Set Time (in minutes)</p>
+            <input type="text" name="name"/>
+          </div>
+          <div class="item">
+          </div> 
+          <div class="btn-block">
+            <button type="submit" href="/">SEND</button>
+          </div>
+        </form>
+      </div>
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>available_time</th>
+            <th>court_type</th>
+            <th>court_location</th>
+            <th>action</th>
+        </tr>
+         <% if(timetable.length > 0){ %>
+            <% for(var i=0; i<timetable.length; i++){ %>
+                <tr>
+                    <td><%= timetable[i].id %></td>
+                    <td><%= timetable[i].available_time %></td>
+                    <td><%= timetable[i].court_type %></td>
+                    <td><%= timetable[i].court_location %></td>
+                    <td><%= username %></td>
+                </tr>
+            <% } %>
+
+        <% }else{ %>
+            <h1>no </h1>
+
+        <% } %>
+    </table>
+    
+</body>
+</html>

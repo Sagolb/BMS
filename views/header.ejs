@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MAIN</title>
+    <link rel = "icon" href ="assets/bb1.png"
+        type = "image/x-icon">
+    <link rel="stylesheet" href="assets/main.css">
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="assets/bb1.png" alt="logo">
+        </div>
+        <div class="icon">
+          <!-- <span class="toggle">☰</span> -->
+        </div>
+        <h1 id="title">Basketball Management System</h1>
+        <ul class="list-item">
+          <li><a href="/main">Home</a></li>
+          <li><a href="/contact">Court Review</a></li>
+          <li><a href="/about">About us</a></li>
+          <%if(locals.username){%>
+           
+            <li><a href="/logout">Logout</a></li>
+            <%} else { %>
+            <li><a href="/login">Login</a></li>
+            <% } %>
+        </ul>
+      </nav>
+    </header>
+  <body>

@@ -1,0 +1,26 @@
+
+<form action="" method="POST">
+    <input type="hidden" name="BookingID" value="<%= show[0].BookingID %>" placeholder="BookingID">
+    <input type="date" name="Date" value="<%= show[0].Date %>" placeholder="Date">
+    <select name="Timming" value="<%= show[0].Timming %>">
+        <option value="6am-7am">6am-7am</option>
+        <option value="7am-8am">7am-8am</option>
+        <option value="8am-9am">8am-9am</option>
+        <option value="9am-10am">9am-10am</option>
+        <option value="10am-11am">10am-11am</option>
+        <option value="11am-12pm">11pm-12pm</option>
+        <option value="12pm-1pm">12pm-1pm</option>
+        <option value="1pm-2pm">1pm-2pm</option>
+        <option value="2pm-3pm">2pm-3pm</option>
+        <option value="3pm-4pm">3pm-4pm</option>
+        <option value="4pm-5pm">4pm-5pm</option>
+        <option value="5pm-6pm">5pm-6pm</option>
+        <option value="6pm-7pm">6pm-7pm</option>
+        <option value="7pm-8pm">7pm-8pm</option>
+      </select><br>
+
+    <input type="text" name="status" value="<%= show[0].status %>" placeholder="Status">
+    <input type="text" name="Payment" value="<%= show[0].Payment %>" placeholder="Payment">
+
+    <button type="submit">Submit</button>
+</form>

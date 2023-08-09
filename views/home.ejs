@@ -1,0 +1,15 @@
+<%- include('header') %>
+<div class="welcome">
+    <h4>
+        Hello there, welcome.
+    </h4>
+    <%if(locals.username){%>
+    <p>You are logged in as <%=username%></p>
+    <p>Your id is <%=UserID%></p>
+    <p><a href="/logout">Logout</a></p>
+    <%} else { %>
+    <p><a href="/login">Login</a></p>
+    <% } %>
+</div>
+
+<%- include('footer') %>

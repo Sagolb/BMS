@@ -1,0 +1,54 @@
+<%- include('header') -%>
+
+
+<h1> Court Review</h1>
+<br><br>
+<img class="img" src="assets/bc.jpg" alt="image">
+<br><br>
+<div class="box">
+    <div class="form">
+        <form action="/contact" method="POST">
+            <textarea id="Review" class="input-field2" name="Review" placeholder="Write something.." required></textarea>
+            <div class="btn-container">
+                <button type="submit" class="btn">Review</button>
+            </div>
+            </form>
+            </div>
+            </div>
+            <br><br><br>
+            <table>
+                <tr>
+                   <th>Reviews</th>
+                </tr>
+                
+                <% if(show.length > 0){ %>
+                    <% for(var i=0; i<show.length; i++){ %>
+                        <tr>
+                           <td> <%= show[i].Review %></td>
+                        </tr>
+                    <% } %>
+        
+                <% }else{ %>
+                    <tr>
+                        <td><h1>No Reviews</h1></td>
+                      </tr>
+        
+                <% } %>
+            </table>
+
+<script>
+    $('.toggle').click(function () {
+    "use strict";
+    $('nav ul').slideToggle();
+});
+
+
+$(window).resize(function () {
+    "use strict";
+    if ($(window).width() > 780) {
+        $('nav ul').removeAttr('style');
+    }
+});
+</script>
+
+<%- include('footer') -%>

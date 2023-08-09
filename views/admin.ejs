@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the admin portal
+
+    </title>
+    <link rel="stylesheet" href="assets/main.css">
+
+</head>
+<body>
+    <h1>Admin Portal </h1><br>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>  
+            <th>Timming</th>
+            <th>court_location</th>
+            <th>Booked By</th>
+            <th>Payment</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <% if(show.length > 0){ %>
+            <% for(var i=0; i<show.length; i++){ %>
+                <tr>
+                    <td><%= show[i].BookingID %></td>
+                    <td><%= show[i].Date %></td>
+                    <td><%= show[i].Timming %></td>
+                    <td><%= show[i].Status %></td>
+                    <td><%= show[i].UserID %></td>
+                    <td><%= show[i].Payment %></td>
+                    <td>
+                        <a href="/update?BookingID=<%= show[i].BookingID %>">Update</a>
+                       
+                    </td>
+                    <td>
+                        <a href="/delete?id=<%= show[i].BookingID %>">Delete</a>
+                    </td>
+                </tr>
+            <% } %>
+
+        <% }else{ %>
+            <h1>no </h1>
+
+        <% } %>
+    </table>
+    <br><br><br><br><br>
+    <table>
+        <tr>
+            <th>Review</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+
+
+    </table>
+
+
+</body>
+</html>
